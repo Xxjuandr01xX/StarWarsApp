@@ -1,10 +1,21 @@
 let character_search = () =>{
-	fetch('https://swapi.dev/api/people/').
-	then(response => response.json).
-	then(data => {
-		let dat = JSON.parse(data);
-		console.log(dat);
-	});
+	for(let i = 0; i < 10; i++){
+		let urlString = 'https://swapi.dev/api/people/?page='+i;
+		fetch(urlString).
+		then(response => response.json()).
+		then(data => {
+			console.log(data.results);
+		});
+	}
 }
 
-character_search();
+
+
+let next_page = (int) => {
+ /**
+  *  Funcion para pasar a la siguiente lista de personajes.
+  * */
+}
+
+//character_search();
+lista_personajes();
